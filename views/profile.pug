@@ -1,0 +1,119 @@
+
+doctype html
+link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+link(rel='stylesheet', href='https://code.getmdl.io/1.2.1/material.indigo-pink.min.css')
+script(defer='', src='https://code.getmdl.io/1.2.1/material.min.js')
+html(lang='en')
+  head
+  
+
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='A front-end template that helps you build fast, modern mobile web apps.')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, minimum-scale=1.0')
+    title Push Me
+    // Add to homescreen for Chrome on Android
+    meta(name='mobile-web-app-capable', content='yes')
+    link(rel='icon', sizes='192x192', href='images/android-desktop.png')
+    // Add to homescreen for Safari on iOS
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    meta(name='apple-mobile-web-app-title', content='Material Design Lite')
+    link(rel='apple-touch-icon-precomposed', href='images/ios-desktop.png')
+    // Tile icon for Win8 (144x144 + tile color)
+    meta(name='msapplication-TileImage', content='images/touch/ms-touch-icon-144x144-precomposed.png')
+    meta(name='msapplication-TileColor', content='#3372DF')
+    link(rel='shortcut icon', href='images/favicon.png')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css')
+    link(rel='stylesheet', href='styles.css')
+    style.
+      #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+      }
+  body
+    .demo-layout.mdl-layout.mdl-js-layout.mdl-layout--fixed-drawer.mdl-layout--fixed-header
+      header.demo-header.mdl-layout__header.mdl-color--grey-100.mdl-color-text--grey-600
+        .mdl-layout__header-row
+          span.mdl-layout-title MEMEMEMEEMEMMEMEMEE
+      .demo-drawer.mdl-layout__drawer.mdl-color--blue-grey-900.mdl-color-text--blue-grey-50
+        header.demo-drawer-header
+            img(src='title.svg')
+            .mdl-layout-spacer
+            button#accbtn.mdl-button.mdl-js-button.mdl-js-ripple-effect.mdl-button--icon
+              span.visuallyhidden Accounts
+        nav.demo-navigation.mdl-navigation.mdl-color--blue-grey-800
+          a.mdl-navigation__link(href='/profile')
+            i.mdl-color-text--blue-grey-400.material-icons(role='presentation') inbox
+            | Profile
+          a.mdl-navigation__link(href='/memerdex')
+            i.mdl-color-text--blue-grey-400.material-icons(role='presentation') people
+            | MEMEerDEX
+          a.mdl-navigation__link(href='/trade')
+            i.mdl-color-text--blue-grey-400.material-icons(role='presentation') people
+            | tRADe
+          a.mdl-navigation__link(href='/logout')
+            i.mdl-color-text--blue-grey-400.material-icons(role='presentation') flag
+            | 
+          .mdl-layout-spacer
+          a.mdl-navigation__link(href='')
+            i.mdl-color-text--blue-grey-400.material-icons(role='presentation') help_outline
+            span.visuallyhidden Help
+      main.mdl-layout__content.mdl-color--grey-100
+        .hover1
+          nav.container1
+            a.buttons(tooltip='plaaaaaaaaayyy', href='/play')
+        style.
+          .mdl-layout__content{
+            padding: 10px;
+          }
+          .demo-card-wide.mdl-card {
+          position: relative;
+          padding: 5px;
+          margin: 30px;
+          width: 95%;
+          color: black;
+          }
+
+          .mdl-card__supporting-text{
+          color: black!important;
+          }
+          .demo-card-wide > .mdl-card__menu {
+            display: none;
+          }
+          .mdl-card__title{
+            color: darkgrey!important;
+          }
+          .mdl-button--red{
+          color: #F44336;
+          }
+          p{
+          color: black;
+          }
+
+        .demo-card-wide.mdl-card.mdl-shadow--2dp
+          .mdl-card__title
+            h2.mdl-card__title-text
+              if (user.facebook.token)
+                span=" " + user.facebook.name
+              else if (user.google.token)
+                span=user.google.name
+              else
+                span=user.local.email
+          .mdl-card__supporting-text
+            each meme in memes
+               p=meme
+              img(src="" + meme.image, style = "width: 200px;")
+              
+          .mdl-card__actions.mdl-card--border
+            if (!user.facebook.token)
+              a.mdl-button.mdl-js-button.mdl-button--primary(href='/connect/facebook') CONNeCt gOoGLe
+            if (!user.google.token)
+              a.mdl-button.mdl-js-button.mdl-button--red(href='/connect/google') coNneCT GOOgLe

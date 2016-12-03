@@ -1,0 +1,37 @@
+
+
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no')
+    title Home
+    // CSS
+    link(rel='stylesheet', href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='css/style.css', type='text/css', rel='stylesheet', media='screen,projection')
+  body
+
+    .row.center
+      p Login or Register with:
+      a.btn.cyan.btn-default(href='/login')
+        span.fa.fa-user
+        |  Login
+      a.btn.cyan.btn-default(href='/signup')
+        span.fa.fa-user
+        |  Signup
+      a.btn.cyan.btn-primary(href='/auth/facebook')
+        span.fa.fa-facebook
+        |  Facebook
+      a.btn.cyan.btn-danger(href='/auth/google')
+        span.fa.fa-google-plus
+        |  Google+
+    br
+    br
+    br
+    br
+
+    script(src='js/materialize.js')
+    script(src='js/init.js')
+

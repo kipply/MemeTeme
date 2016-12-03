@@ -1,0 +1,54 @@
+doctype html
+// views/signup.ejs
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no')
+    title Log In
+    // CSS
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css', type='text/css', rel='stylesheet', media='screen,projection')
+    link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', rel='stylesheet')
+    link(href='css/style.css', type='text/css', rel='stylesheet', media='screen,projection')
+  body
+    #about-us.container
+      .section
+        .row
+          .col.s6.center
+
+              i.mdi-content-send.grey-text
+      .container
+
+        h3
+          span.fa.fa-sign-in.Montserrat
+          |  Sign Up
+
+          if (message.length > 0)
+            .alert.alert-danger
+              p=message
+        form(action='/signup', method='post')
+          .form-group
+            label Email
+            input.form-control(type='text', name='email')
+          .form-group
+            label Password
+            input.form-control(type='password', name='password')
+          button.btn.cyan.btn-warning.btn-lg(type='submit') Signup
+        hr
+        p
+          | Already have an account?
+          a(href='/login') Login
+        p
+          | Or go
+          a(href='/') home
+          | .
+    footer.cyan.page-footer
+      .footer-copyright
+        .container
+          | © 2016 Copyright Information
+          a.grey-text.text-lighten-4.right(href='#!') Terms and Conditions
+    // Scripts
+    script(src='https://code.jquery.com/jquery-2.1.1.min.js')
+    script(src='js/materialize.js')
+    script(src='js/init.js')
+    script(src='script.js')
