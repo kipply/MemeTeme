@@ -1,0 +1,25 @@
+.body {
+    background-color: #f8f8f8;
+overflow-x: none;
+}
+
+.head {
+    position: relative;
+    opacity: 0;
+}
+
+.head2 {
+    position: relative;
+    opacity: 1;
+}
+
+form { 
+	display: none;
+	z-index: 9999;
+	position: fixed;
+	left: 50%;
+}
+
+.visible{
+	display: inline;
+}

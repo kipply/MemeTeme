@@ -109,8 +109,9 @@ html(lang='en')
                 span=user.local.email
           .mdl-card__supporting-text
             each meme in memes
-               p=meme
-              img(src="" + meme.image, style = "width: 200px;")
+              p=meme.name
+              p="RARITY: " + meme.rarity
+              img(src="" + meme.image, style = "width: 200px;   ")
               
           .mdl-card__actions.mdl-card--border
             if (!user.facebook.token)

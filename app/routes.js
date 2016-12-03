@@ -5,9 +5,9 @@ module.exports = function(app, passport) {
     app.get('/', function(req, res) {
         res.render('index.pug');
     });
-    app.post('/earnedMeme', function(req, res){
+    app.post('/earnedMeme/:type', function(req, res){
 
-        Meme.find({}, function(err, group){
+        Meme.find({category: req.params.type}, function(err, group){
                 if(err)
                   throw err;  
 
@@ -72,13 +72,8 @@ module.exports = function(app, passport) {
     app.get('/play/:id', function(req, res) {
       var id = req.params.id;
       console.log(id);
-        Meme.find({}, function(err, group){
-                if(err)
-                  throw err;
-              })
       res.render('gameplay.pug', {type: id});
     });
-
 
     app.get('/logout', function(req, res) {
         req.logout();

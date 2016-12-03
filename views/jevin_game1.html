@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jevin Memes</title>
+        <link rel="stylesheet" href="jevin_game1.css" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="jevin_game.js"></script>
+    </head>
+    <script>
+
+    var posx = (Math.random() * ($(document).width() - divsize)).toFixed();
+    var posy = (Math.random() * ($(document).height() - divsize)).toFixed();
+    
+    $(".head").css({
+        'left':posx+'px',
+        'top':posy+'px',
+    })
+</script>
+    <body class="body">
+        <audio id="bgAudio" autoplay loop="loop">
+            <source src="jevin2.mp3">        
+        </audio>
+        
+        <div class="head" id="head" onmouseover="PlaySound('mySound')" 
+         onmouseout="StopSound('mySound')" onclick="document.getElementById('head').className = 'head2';">
+	<img src="jevin_head.png"></img>
+</div>
+        <audio id='mySound' loop="loop" src='jevin_head.mp3'/>
+
+
+        <div class="score">
+            <p id="score_title">your score.</p>
+            <p id="score">0</p>
+        </div>
+        
+    </body>
+    
+</html>
